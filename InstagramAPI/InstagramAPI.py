@@ -428,7 +428,7 @@ class InstagramAPI:
             }
         )
         #self.SendRequest(endpoint,post=data) #overwrites 'Content-type' header and boundary is missed
-        response = self.s.post(self.API_URL + endpoint, data=data)
+        response = self.s.post(self.API_URL + endpoint, data=data.encode('utf-8'))
         
         if response.status_code == 200:
             self.LastResponse = response
